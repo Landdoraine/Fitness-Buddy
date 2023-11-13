@@ -21,7 +21,7 @@ app.use('/api/workouts', workoutRoutes)
 app.use('/api/user', userRoutes)
 
 // connect to db
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/test')
   .then(() => {
     // listen for requests
     const port = process.env.PORT || 4000;
